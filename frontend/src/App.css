@@ -1,0 +1,539 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f6f8fa;
+  color: #24292f;
+  margin: 0;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+h1 {
+  margin-top: 0;
+  border-bottom: 1px solid #d0d7de;
+  padding-bottom: 10px;
+}
+
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+.row > .form-group {
+  flex: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select {
+  padding: 10px 12px; /* Padroniza o espaçamento interno vertical e horizontal */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #333;
+  box-sizing: border-box; /* Garante que padding e borda não alterem a largura/altura final */
+  height: 42px; /* Força a mesma altura exata em todos os campos */
+}
+
+/* Ajuste específico para alinhar o ícone do calendário */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.2s;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #0969da;
+  box-shadow: 0 0 0 3px rgba(9,105,218,0.3);
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 1.5rem;
+  padding: 10px 0;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+button {
+  background-color: #2da44e;
+  color: white;
+  border: 1px solid rgba(27,31,36,0.15);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: .2s;
+}
+
+button:hover:not(:disabled) {
+  background-color: #2c974b;
+}
+
+button:disabled {
+  background-color: #94d3a2;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.success {
+  background-color: #dafbe1;
+  color: #1a7f37;
+  border: 1px solid rgba(45,164,78,0.4);
+}
+
+.error {
+  background-color: #ffebe9;
+  color: #cf222e;
+  border: 1px solid rgba(255,129,130,0.4);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.2s;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* --- Linha de Labels Horizontal --- */
+.label-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  align-items: center;
+  width: 100%;
+}
+
+.label-name-input {
+  flex: 1.2;
+}
+
+.color-picker-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1.2;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 8px;
+  height: 42px;
+  box-sizing: border-box;
+}
+
+.color-picker-wrapper input[type="color"] {
+  border: none;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  background: none;
+  padding: 0;
+}
+
+.color-text-input {
+  border: none !important;
+  box-shadow: none !important;
+  height: auto !important;
+  padding: 0 !important;
+  font-family: monospace;
+  text-transform: uppercase;
+  width: 100%;
+  font-size: 0.9rem;
+  background: transparent;
+}
+
+.color-text-input:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+
+.label-desc-input {
+  flex: 2.5;
+}
+
+/* --- Estilos para os Cartões de Marcos (Milestones) --- */
+.milestone-card {
+  background: #fdfdfd;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.milestone-top-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.milestone-key-input {
+  flex: 1;
+  max-width: 90px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.milestone-title-input {
+  flex: 6;
+}
+
+.milestone-desc-row {
+  width: 100%;
+}
+
+.milestone-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #333;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.milestone-textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* --- Estilos para os Cartões de Issues --- */
+.issue-card-box {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-left: 4px solid #0969da;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.issue-top-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.issue-title-input {
+  flex: 5;
+}
+
+.issue-milestone-select {
+  flex: 1;
+  min-width: 90px;
+}
+
+.issue-desc-row {
+  width: 100%;
+}
+
+.issue-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #333;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.issue-textarea:focus {
+  outline: none;
+  border-color: #0969da;
+  box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.2);
+}
+
+.sub-section {
+  margin-top: 5px;
+  border-top: 1px dashed #eaecef;
+  padding-top: 10px;
+}
+
+.sub-section-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #57606a;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.sub-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.sub-row input {
+  flex: 1;
+  height: 38px;
+}
+
+.btn-remove-sm {
+  background: #cf222e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  min-width: 38px;
+  height: 38px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.btn-remove-sm:hover {
+  background: #a40e26;
+}
+
+/* --- Loading Spinner Limpo e Controlado --- */
+.loading-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.spinner-css {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin-kf 0.7s linear infinite;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+@keyframes spin-kf {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- Tela de Boas-Vindas (Welcome Screen) --- */
+.welcome-screen {
+  min-height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #092c4c 0%, #0d47a1 50%, #e65100 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+
+.welcome-content {
+  max-width: 750px;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.welcome-logo {
+  height: 64px;
+  width: auto;
+  margin-bottom: 0.5rem;
+  filter: brightness(0) invert(1);
+}
+
+.welcome-tag {
+  background-color: rgba(255, 111, 0, 0.25);
+  color: #ff9800;
+  border: 1px solid #ff9800;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.welcome-content h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.2;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.welcome-content p {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+  max-width: 650px;
+}
+
+.btn-welcome-start {
+  background: linear-gradient(135deg, #ff6f00 0%, #e65100 100%);
+  color: #ffffff;
+  border: none;
+  padding: 16px 36px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(230, 81, 0, 0.4);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-welcome-start:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(230, 81, 0, 0.6);
+  background: linear-gradient(135deg, #ff8f00 0%, #f57c00 100%);
+}
+
+/* --- Wrapper geral da página de formulário --- */
+.app-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  background-color: #f6f8fa;
+}
+
+/* --- Container que engloba o formulário e permite posicionar o botão na quina --- */
+.form-container-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* --- Botão Compacto Laranja no Canto Superior Esquerdo --- */
+.btn-top-welcome {
+  position: absolute;
+  top: -45px;
+  left: 0;
+  background: #f39c12;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(230, 81, 0, 0.3);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 10;
+}
+
+.btn-top-welcome:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(230, 81, 0, 0.5);
+  background: #e67e22;
+}
+
+/* --- Barra de Rolagem Personalizada para as Issues --- */
+.issues-scroll-container {
+  max-height: 550px; /* Define uma altura máxima visível antes de ativar a barra de rolagem */
+  overflow-y: auto;  /* Ativa o scroll vertical automático */
+  padding-right: 8px;  /* Espaçamento interno para a barra não colar nos cards */
+  margin-bottom: 10px;
+}
+
+/* Customização visual da barra de rolagem (opcional, deixa com visual moderno) */
+.issues-scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.issues-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.issues-scroll-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.issues-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
