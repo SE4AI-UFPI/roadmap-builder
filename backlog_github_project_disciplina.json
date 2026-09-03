@@ -10,682 +10,459 @@
       "M2": {"value": 33, "unit": "days"},
       "M3": {"value": 28, "unit": "days"},
       "M4": {"value": 9, "unit": "days"},
-      "M5": {"value": 8, "unit": "days"}
+      "M5": {"value": 13, "unit": "days"}
     }
   },
   "labels": [
     {"name": "fase:i", "color": "1D76DB", "description": "Fase I - Exploração (M1)"},
     {"name": "fase:ii", "color": "5319E7", "description": "Fase II - Viabilidade e Concepção (M2)"},
-    {"name": "fase:iii", "color": "0E8A16", "description": "Fase III - MVP (M3)"},
+    {"name": "fase:iii", "color": "0E8A16", "description": "Fase III - Desenvolvimento do MVP (M3)"},
     {"name": "fase:iv", "color": "FBCA04", "description": "Fase IV - Piloto cruzado (M4)"},
-    {"name": "fase:v", "color": "D93F0B", "description": "Fase V - Entrega e habilitação (M5)"},
-    {"name": "tipo:atividade", "color": "C2E0C6", "description": "Atividade do grupo"},
-    {"name": "tipo:documento", "color": "F9D0C4", "description": "Seção/entrega de documento em docs/"},
-    {"name": "tipo:codigo", "color": "BFDADC", "description": "Código, testes, CI ou infraestrutura"},
-    {"name": "tipo:gate", "color": "E4E669", "description": "Gate com o Comitê Gestor (professor)"},
+    {"name": "fase:v", "color": "D93F0B", "description": "Fase V - Entrega e Habilitação (M5)"},
+    {"name": "tipo:entregavel", "color": "F9D0C4", "description": "O único documento entregue ao final da fase (docs/Mx_*.md)"},
+    {"name": "tipo:atividade", "color": "C2E0C6", "description": "Trabalho que produz evidência ou incremento técnico para o documento da fase"},
+    {"name": "tipo:banca", "color": "E4E669", "description": "Banca com o Comitê Gestor (professor) — ocupa a aula inteira"},
     {"name": "papel:dados", "color": "0052CC", "description": "Engenheiro de Dados"},
     {"name": "papel:ml", "color": "8E44AD", "description": "Engenheiro de Machine Learning"},
     {"name": "papel:software", "color": "2EA44F", "description": "Engenheiro de Software"},
-    {"name": "papel:demandante", "color": "6F42C1", "description": "Interlocução com demandante/usuário"},
-    {"name": "trilha:fmware", "color": "D4C5F9", "description": "Só se a trilha declarada for FMware ou híbrida"},
-    {"name": "ai4se", "color": "FEF2C0", "description": "Registro de uso de assistentes de IA (transversal)"},
-    {"name": "rastreabilidade", "color": "C5DEF5", "description": "Vínculo decisão ↔ evidência (critério transversal)"}
+    {"name": "papel:demandante", "color": "6F42C1", "description": "Interlocução com cliente/demandante e usuários"},
+    {"name": "trilha:fmware", "color": "D4C5F9", "description": "Conteúdo específico da trilha FMware ou híbrida"},
+    {"name": "ai4se", "color": "FEF2C0", "description": "Registro de uso de assistentes de IA (docs/uso_de_ia.md, M1 → M5)"}
   ],
   "milestones": [
-    {"key": "M1", "title": "M1 - Exploração (Fase I, 10%)", "description": "Entrega 09/09, gate G1 em 10/09. docs/M1_exploracao.md + repositório criado + papéis definidos. Foco nos desafios D1 (especificação e enquadramento) e D8 (limites de autonomia)."},
-    {"key": "M2", "title": "M2 - Viabilidade e Concepção (Fase II, 25%)", "description": "Entrega 12/10, gate G2 em 13/10. docs/M2_viabilidade_concepcao.md + notebooks/poc.ipynb. Rapid Review, concepção (PerSpecML), EDA/PoC, parecer de viabilidade e plano do MVP."},
-    {"key": "M3", "title": "M3 - Desenvolvimento do MVP (Fase III, 30%)", "description": "Entrega 09/11, gate G3 em 10/11 (com sorteio do pareamento do piloto). Repositório funcional + docs/M3_mvp.md + checklist de aceite nas 5 dimensões."},
-    {"key": "M4", "title": "M4 - Piloto cruzado (Fase IV, 20%)", "description": "Piloto de 10/11 a 16/11 com equipe pareada. Entrega 18/11, gate G4 em 19/11. docs/M4_piloto.md com golden set, validação de campo e parecer de ajuste ético."},
-    {"key": "M5", "title": "M5 - Entrega e Habilitação (Fase V, 15%)", "description": "Entrega 23/11; transferência cruzada em aula 24/11; apresentação final 26/11. docs/M5_entrega.md + RUNBOOK completo + kit de transferência."}
+    {"key": "M1", "title": "M1 - Exploração (Fase I · 10%)", "description": "Entrega única: docs/M1_exploracao.md em 09/09 até 23h59. Banca G1 em 10/09 (aula 10). Desafios em foco: D1 especificação e enquadramento · D8 limites de autonomia."},
+    {"key": "M2", "title": "M2 - Viabilidade e Concepção (Fase II · 25%)", "description": "Entrega única: docs/M2_viabilidade_concepcao.md em 12/10 até 23h59, com notebooks/poc.ipynb como evidência anexa. Banca G2 em 13/10 (aula 19). Desafios: D1 · D2 dados · D3 incerteza e viabilidade · D4 arquitetura · trilha FMware."},
+    {"key": "M3", "title": "M3 - Desenvolvimento do MVP (Fase III · 30%)", "description": "Entrega única: docs/M3_mvp.md em 09/11 até 23h59, apontando para o repositório funcional. Semana de Desenvolvimento sem aula em 03 e 05/11. Banca G3 em 10/11 (aula 24) com sorteio do pareamento do piloto. Desafios: D4 integração · D5 testabilidade · D6 MLOps e dívida técnica."},
+    {"key": "M4", "title": "M4 - Piloto cruzado (Fase IV · 20%)", "description": "Piloto de 10/11 a 16/11: cada equipe usa o sistema da outra como usuária real. Entrega única: docs/M4_piloto.md em 18/11 até 23h59. Banca G4 em 19/11 (aula 27). Desafios: D7 drift e observabilidade · D8 ética e supervisão humana."},
+    {"key": "M5", "title": "M5 - Entrega e Habilitação (Fase V · 15%)", "description": "Entrega única: docs/M5_entrega.md em 25/11 até 23h59. Handover cruzado em aula em 26/11 (aula 29); apresentações finais em 01/12 (aula 30); reserva em 03/12. Desafios: D6 sustentação · D7 operação · AI4SE."}
   ],
   "issues": [
     {
-      "title": "[Setup] Criar repositório a partir do template e definir papéis do grupo",
+      "title": "[Atividade] Criar repositório a partir do template e nomear os perfis técnicos",
       "milestone": "M1",
-      "labels": ["fase:i", "tipo:codigo", "papel:software"],
-      "description": "Criar o repositório GitHub a partir do template da disciplina, com a estrutura prevista no guia (README.md, docs/, notebooks/, src/, tests/, data/, models/, .github/workflows/, RUNBOOK.md, docs/uso_de_ia.md). Nomear responsáveis pelos três perfis técnicos (Engenheiro de Dados, de ML e de Software) — uma pessoa pode acumular perfis, mas cada perfil precisa de um responsável nomeado. Habilitar o GitHub Projects do grupo com épicos, histórias e critérios de pronto.",
+      "labels": ["fase:i", "tipo:atividade", "papel:software"],
+      "description": "Criar o repositório GitHub do grupo a partir do template da disciplina (README, docs/, notebooks/, src/, tests/, data/, models/, .github/workflows/, RUNBOOK.md), copiar os templates M1–M5 e uso_de_ia.md para docs/ e nomear um responsável para cada perfil técnico (Engenheiro de Dados, de ML e de Software — a mesma pessoa pode acumular perfis). Configurar o GitHub Projects com histórias e critérios de pronto. Prazo de referência: 01/09 (tema validado; repositório criado).",
       "entregaveis": [
-        "Repositório criado com a árvore de diretórios do guia (§3).",
-        "README.md com visão do projeto, como rodar e status atual.",
-        "GitHub Projects configurado e vinculado ao repositório.",
-        "Papéis por perfil registrados no README e no bloco de Controle do Documento."
+        "Repositório criado com a estrutura do template e templates copiados para docs/.",
+        "README com visão do projeto, papéis por perfil e status atual.",
+        "GitHub Projects vinculado ao repositório."
       ],
       "criterios_aceite": [
-        "Todos os integrantes têm acesso de escrita e ao menos um commit próprio.",
-        "Cada perfil técnico tem um responsável nomeado.",
-        "Estrutura de pastas corresponde à do guia; pastas vazias marcadas com .gitkeep."
+        "Todos os integrantes têm acesso e ao menos um commit próprio.",
+        "Cada perfil técnico tem um responsável nomeado no README e no bloco de Controle do M1."
       ]
     },
     {
-      "title": "[Atividade] Levantar contexto e demanda com o demandante (F1.DO1)",
-      "milestone": "M1",
-      "labels": ["fase:i", "tipo:atividade", "papel:demandante", "rastreabilidade"],
-      "description": "Identificar quem tem o problema, em que contexto ele ocorre e como o processo funciona hoje sem IA. O demandante pode ser real ou simulado, mas com um interlocutor identificado. Descrever o problema como dor ou necessidade — nunca como tecnologia desejada.",
-      "entregaveis": [
-        "Seção 1 de docs/M1_exploracao.md: situação atual, problema/oportunidade, consequências de não tratar.",
-        "Tabela de processo afetado, público beneficiário, valor esperado, indicadores disponíveis e urgência.",
-        "Registro da conversa/entrevista com o demandante (ata ou anotações)."
-      ],
-      "criterios_aceite": [
-        "Demanda vinculada a um demandante, um responsável e um ponto focal identificados.",
-        "Problema descrito como dor ou necessidade, não como tecnologia desejada.",
-        "Processo afetado, público impactado e valor esperado identificados."
-      ]
-    },
-    {
-      "title": "[Atividade] Mapear stakeholders e usuários (F1.DO2)",
+      "title": "[Atividade] Levantar demanda, stakeholders e limites de autonomia com o demandante",
       "milestone": "M1",
       "labels": ["fase:i", "tipo:atividade", "papel:demandante"],
-      "description": "Mapear atores, papéis, interesse, influência e forma de envolvimento. Responder explicitamente quem decidiria adotar a solução e quem seria afetado sem participar da decisão.",
+      "description": "Conversar com o cliente/demandante (real ou simulado, com interlocutor identificado) para descrever a situação atual sem IA, o problema como dor ou necessidade, as consequências de não tratá-lo, o processo afetado, o público e o valor esperado. Mapear atores, quem decide a adoção e quem é afetado sem decidir. Registrar já aqui a primeira resposta sobre o que o sistema NÃO deve decidir sozinho. Alimenta as seções 1, 2 e 5 do M1.",
       "entregaveis": [
-        "Seção 2 de docs/M1_exploracao.md com a tabela de atores.",
-        "Identificação de quem decide a adoção e de quem é afetado sem decidir."
+        "Ata ou anotações da conversa com o demandante (evidência para a seção 1).",
+        "Tabela de stakeholders (ator, papel, interesse, influência, envolvimento).",
+        "Resposta preliminar sobre limites de autonomia e supervisão humana."
       ],
       "criterios_aceite": [
-        "Cada ator tem papel, interesse, influência (alta/média/baixa) e forma de envolvimento.",
+        "Demandante, responsável e ponto focal identificados.",
+        "Problema descrito como dor ou necessidade, não como tecnologia desejada.",
         "Está explícito quem decidiria adotar a solução."
       ]
     },
     {
-      "title": "[Atividade] Conduzir ideação (Lean Inception) e registrar dores e hipóteses (F1.DO3)",
+      "title": "[Atividade] Oficina de ideação (Lean Inception) e portfólio de 3 candidatos",
       "milestone": "M1",
-      "labels": ["fase:i", "tipo:atividade", "papel:demandante"],
-      "description": "Executar a oficina de ideação usando o template Miro de Lean Inception e registrar dores, oportunidades, restrições e hipóteses levantadas, com link para o board.",
+      "labels": ["fase:i", "tipo:atividade", "papel:demandante", "papel:ml"],
+      "description": "Executar a oficina com o template Miro de Lean Inception e registrar dores, oportunidades, restrições e hipóteses. Derivar três problemas candidatos, avaliá-los em impacto × complexidade técnica × risco, declarar o critério de priorização e justificar a escolha e os dois descartes. Levantar as fontes de dados inicialmente conhecidas e os cuidados preliminares (dados pessoais, impacto em direitos, LGPD). Alimenta as seções 3, 4, 6 e 7 do M1.",
       "entregaveis": [
-        "Seção 3 de docs/M1_exploracao.md com dores, oportunidades, restrições e hipóteses.",
-        "Link público (ou captura) do board da oficina."
+        "Link ou captura do board da oficina.",
+        "Matriz dos 3 candidatos com notas e justificativas.",
+        "Lista de fontes de dados conhecidas e classificação preliminar de dados pessoais."
       ],
       "criterios_aceite": [
-        "Board acessível e referenciado no documento.",
-        "Hipóteses levantadas estão listadas separadamente das dores."
+        "Exatamente 3 candidatos avaliados nas três dimensões, com priorização consistente com as notas.",
+        "Sinais de alerta do guia verificados (dados que \"vamos conseguir depois\" registrados como risco)."
       ]
     },
     {
-      "title": "[Atividade] Montar portfólio de 3 candidatos e priorizar (F1.DO4/F1.DO5)",
+      "title": "[Atividade] Abrir docs/uso_de_ia.md e registrar o uso de IA na Fase I",
       "milestone": "M1",
-      "labels": ["fase:i", "tipo:atividade", "rastreabilidade"],
-      "description": "Avaliar três problemas candidatos em impacto × complexidade técnica × risco, declarar o critério de priorização adotado e justificar tanto a escolha quanto o descarte dos outros dois.",
+      "labels": ["fase:i", "tipo:atividade", "ai4se"],
+      "description": "Iniciar o registro transversal de uso de assistentes de IA, mantido de M1 a M5 e discutido na banca G3: onde foram usados (código, documentação, análise, testes), o que foi aceito sem revisar, onde a IA errou e como a equipe percebeu, e que parte do sistema a equipe não conseguiria explicar hoje.",
       "entregaveis": [
-        "Seção 4 de docs/M1_exploracao.md com a matriz dos 3 candidatos.",
-        "Critério de priorização e justificativa da escolha e dos descartes."
+        "docs/uso_de_ia.md com as quatro perguntas e a primeira entrada (Fase I)."
       ],
       "criterios_aceite": [
-        "Exatamente 3 candidatos avaliados nas três dimensões.",
-        "Consistência entre as notas atribuídas e o problema escolhido.",
-        "Justificativa registrada para cada descarte."
+        "Arquivo existe no repositório e é referenciado no README."
       ]
     },
     {
-      "title": "[Documento] Problema priorizado, hipótese de IA e limites de autonomia (F1.DO6)",
+      "title": "[Entregável] M1 — Documento de Exploração (docs/M1_exploracao.md) · 09/09",
       "milestone": "M1",
-      "labels": ["fase:i", "tipo:documento", "rastreabilidade"],
-      "description": "Delimitar o escopo (o que está dentro e fora), registrar a hipótese inicial de aplicação de IA — sem fechar a solução — e responder o que o sistema NÃO deve decidir sozinho e onde há necessidade de supervisão humana. Justificar por que IA e não regras determinísticas.",
+      "labels": ["fase:i", "tipo:entregavel"],
+      "description": "Único documento da Fase I, no template da disciplina, com a anatomia oficial (controle, rastreabilidade, conteúdo, critérios de aceite, validação). Seções: 1 Contexto e demanda (F1.DO1) · 2 Stakeholders e usuários (F1.DO2) · 3 Registro da ideação (F1.DO3) · 4 Portfólio de candidatos (F1.DO4+DO5) · 5 Problema priorizado com delimitação, hipótese inicial de IA e limites de autonomia (F1.DO6) · 6 Dados inicialmente conhecidos · 7 Restrições e cuidados preliminares. Documento em fase inicial deve ter mais hipótese e lacuna do que certeza. Entregar até 09/09, 23h59.",
       "entregaveis": [
-        "Seção 5 de docs/M1_exploracao.md (delimitação, tipo de apoio, decisão apoiada, limites conhecidos).",
-        "Argumento explícito de por que o problema pede aprendizado de máquina."
+        "docs/M1_exploracao.md com as 7 seções preenchidas (ou com justificativa de não aplicação).",
+        "Bloco de Controle e Rastreabilidade preenchidos, status \"Em validação\".",
+        "Checklist de critérios mínimos de aceite autoavaliado no fim do documento."
       ],
       "criterios_aceite": [
-        "Limites de autonomia declarados: o que a solução não deve decidir sozinha.",
-        "Necessidade de supervisão humana avaliada (\"não sei ainda\" é aceitável se argumentado).",
-        "Escopo delimitado com fronteira dentro/fora explícita."
+        "Demanda vinculada a um demandante, um responsável e um ponto focal identificados.",
+        "Problema descrito como dor ou necessidade, não como tecnologia desejada.",
+        "Processo afetado, público impactado e valor esperado identificados.",
+        "Informações iniciais sobre dados, restrições e stakeholders suficientes para preparar a Fase II.",
+        "Consistência da priorização entre os 3 candidatos (impacto × complexidade × risco).",
+        "Limites de autonomia declarados: o que a solução não deve decidir sozinha."
       ]
     },
     {
-      "title": "[Atividade] Levantar dados conhecidos e restrições preliminares",
+      "title": "[Banca] G1 — Exploração · 10/09 (aula 10)",
       "milestone": "M1",
-      "labels": ["fase:i", "tipo:atividade", "papel:dados"],
-      "description": "Listar fontes de dados inicialmente conhecidas (formato, responsável, atualização, acesso) e registrar cuidados preliminares: dados pessoais, impacto potencial em direitos ou acesso a serviços, integrações e restrições legais (LGPD, sigilo, normas setoriais).",
+      "labels": ["fase:i", "tipo:banca"],
+      "description": "Apresentação de 10 min + 10 min de arguição perante o Comitê Gestor. Perguntas: o problema está bem delimitado? Há razão para acreditar que IA é a abordagem adequada? Vocês sabem quem decidiria adotar isso? O que o sistema não pode decidir sozinho? Decisões: avançar / avançar com condicionantes / ajustar e reapresentar / encerrar com justificativa. Levar: o que sabemos, com que evidência, o que ainda é hipótese e qual o risco de seguir.",
       "entregaveis": [
-        "Seções 6 e 7 de docs/M1_exploracao.md.",
-        "Classificação dos dados pessoais: não identificados / comuns / sensíveis / a confirmar."
-      ],
-      "criterios_aceite": [
-        "Informações sobre dados, restrições e stakeholders suficientes para preparar a Fase II.",
-        "Sinais de alerta do guia §6 verificados (dados que \"vamos conseguir depois\" declarados como risco)."
-      ]
-    },
-    {
-      "title": "[Documento] Abrir docs/uso_de_ia.md (registro AI4SE)",
-      "milestone": "M1",
-      "labels": ["fase:i", "tipo:documento", "ai4se"],
-      "description": "Criar o registro de uso de assistentes de IA, mantido de M1 a M5: onde foram usados, o que foi aceito sem revisão, onde a IA errou e como a equipe percebeu, e que parte do sistema a equipe não conseguiria explicar hoje.",
-      "entregaveis": [
-        "docs/uso_de_ia.md criado com as quatro perguntas e primeira entrada."
-      ],
-      "criterios_aceite": [
-        "Arquivo existe e é atualizado a cada marco (verificado no gate G3)."
-      ]
-    },
-    {
-      "title": "[Gate] G1 - Exploração (10/09)",
-      "milestone": "M1",
-      "labels": ["fase:i", "tipo:gate"],
-      "description": "Apresentação de 10 min + 10 min de arguição perante o Comitê Gestor. Perguntas do gate: o problema está bem delimitado? Existe razão para acreditar que IA é a abordagem adequada? Vocês sabem quem decidiria adotar isso? O que o sistema não pode decidir sozinho? Decisões possíveis: avançar / avançar com condicionantes / ajustar e reapresentar / encerrar com justificativa.",
-      "entregaveis": [
-        "docs/M1_exploracao.md entregue na véspera até 23h59.",
         "Slides da apresentação (10 min).",
-        "Registro da decisão do gate e das condicionantes no documento."
+        "Decisão e condicionantes da banca registradas no bloco de Validação do M1."
       ],
       "criterios_aceite": [
-        "Critérios mínimos de aceite de F1.DO1 e F1.DO6 marcados e evidenciados.",
-        "Grupo distingue no gate o que é sabido, o que é hipótese e qual o risco de seguir.",
-        "Histórico do repositório mostra trabalho distribuído e incremental (não concentrado na véspera)."
+        "Grupo distingue com clareza o que é sabido, o que é hipótese e qual o risco.",
+        "Histórico do repositório mostra trabalho distribuído e incremental, não concentrado na véspera."
       ]
     },
     {
-      "title": "[Atividade] Declarar a trilha do projeto: ML sob medida, FMware ou híbrida",
+      "title": "[Atividade] Rapid Review com protocolo enxuto (Parte A do M2)",
       "milestone": "M2",
       "labels": ["fase:ii", "tipo:atividade", "papel:ml"],
-      "description": "Declarar a trilha e derivar suas consequências nos artefatos: o que conta como dados versionados, registro de modelos, avaliação offline, baseline, salvaguardas e riscos de operação (guia §1). Trilha FMware ou híbrida acrescenta prompts/ e evals/ ao repositório.",
+      "description": "Síntese rápida de conhecimento para embasar as decisões de viabilidade e concepção — não é contribuição de pesquisa nem busca no Google. Definir pergunta, escopo, critérios de inclusão/exclusão, bases, strings e as simplificações metodológicas assumidas; registrar cada busca; extrair achado, implicação e confiança por fonte; fechar com a tabela hipótese/lacuna → como validar → onde será tratada. Volume: 8 fontes, ao menos 4 revisadas por pares; deve caber em uma semana de trabalho da equipe. Literatura cinza, se usada, com motivo, credibilidade e limitação.",
       "entregaveis": [
-        "Trilha declarada no M2 com justificativa (quem controla o modelo).",
-        "Se FMware/híbrida: pastas prompts/ e evals/ criadas e descritas no README."
-      ],
-      "criterios_aceite": [
-        "A escolha da trilha decorre do problema, não da técnica desejada.",
-        "A tabela de equivalência de artefatos da trilha está preenchida no documento."
-      ]
-    },
-    {
-      "title": "[Atividade] Rapid Review: protocolo enxuto e registro das buscas (F2.DO1)",
-      "milestone": "M2",
-      "labels": ["fase:ii", "tipo:atividade", "rastreabilidade"],
-      "description": "Definir pergunta de revisão, escopo, critérios de inclusão/exclusão, bases, strings de busca e — sobretudo — as simplificações metodológicas assumidas. Registrar cada busca (data, base, resultados, selecionados). Volume: 8 fontes, ao menos 4 revisadas por pares; a revisão inteira deve caber em uma semana de trabalho da equipe.",
-      "entregaveis": [
-        "Partes A.2, A.3 e A.5 de docs/M2_viabilidade_concepcao.md.",
-        "Tabela de registro das buscas suficiente para outra pessoa refazer o caminho.",
-        "Se houver literatura cinza: A.4 com motivo, credibilidade e limitação de cada fonte."
+        "Seções A.1 a A.5 do M2 (síntese executiva, protocolo, registro das buscas, matriz de evidências, hipóteses e lacunas).",
+        "Evidence briefing de até 2 páginas.",
+        "A.6 opcional: literatura cinza, alternativas técnicas, requisitos extraídos."
       ],
       "criterios_aceite": [
         "Pergunta, escopo, fontes, critérios e simplificações metodológicas registrados.",
         "Registro de busca e seleção permite rastrear as fontes usadas.",
-        "8 fontes, das quais ao menos 4 revisadas por pares."
+        "Cada hipótese ou lacuna tem como validar e artefato destino (Parte B ou C)."
       ]
     },
     {
-      "title": "[Documento] Rapid Review: matriz de evidências, síntese executiva e lacunas",
+      "title": "[Atividade] Declarar a trilha (ML preditivo, FMware ou híbrida) e suas consequências",
       "milestone": "M2",
-      "labels": ["fase:ii", "tipo:documento", "rastreabilidade"],
-      "description": "Sintetizar os achados de forma orientada à decisão: matriz fonte → achado → implicação → confiança; síntese executiva com 3 a 5 achados e recomendação (avançar / avançar com restrições / ajustar escopo / reavaliar problema); e a tabela hipótese/lacuna → como validar → onde será tratada, que é a ponte para o resto da Fase II.",
+      "labels": ["fase:ii", "tipo:atividade", "papel:ml", "trilha:fmware"],
+      "description": "Declaração de trilha prevista para a aula 16 (01/10), registrada no M2. A trilha não muda o processo, mas muda o conteúdo dos artefatos: dados versionados, registro de modelos, avaliação offline, baseline, salvaguardas e riscos de operação. Grupos FMware/híbridos acrescentam prompts/ e evals/ ao repositório e incluem no M2 estimativa de custo e latência e análise de dependência de fornecedor (Atividade 6 do cronograma). Grupos de ML preditivo registram que esses itens não se aplicam e por quê.",
       "entregaveis": [
-        "Partes A.1, A.6 e A.9 de docs/M2_viabilidade_concepcao.md.",
-        "Evidence briefing de até 2 páginas.",
-        "Opcional: A.7 alternativas técnicas e A.8 requisitos/métricas/riscos extraídos da literatura."
+        "Trilha declarada no M2 com justificativa (quem controla o modelo).",
+        "Tabela de equivalência de artefatos da trilha preenchida.",
+        "Se FMware/híbrida: estimativa de custo/latência e análise de fornecedor; pastas prompts/ e evals/ criadas."
       ],
       "criterios_aceite": [
-        "Cada achado tem implicação para o projeto e nível de confiança (alta/média/baixa).",
-        "Cada hipótese/lacuna tem como validar e artefato destino (Parte B ou C).",
-        "Recomendação explícita registrada."
+        "A trilha decorre do problema, não da técnica desejada.",
+        "Consequências da trilha refletidas nas seções B, C e D do M2."
       ]
     },
     {
-      "title": "[Documento] Separar objetivo de negócio, de sistema e de modelo (F2.SP2.DO1)",
+      "title": "[Atividade] Concepção: objetivos, métricas, caso de uso, PerSpecML, arquitetura e mockups (Parte B do M2)",
       "milestone": "M2",
-      "labels": ["fase:ii", "tipo:documento", "papel:ml"],
-      "description": "Enunciar os três níveis de objetivo e explicar como o objetivo do modelo se conecta ao objetivo do negócio. Confundi-los é o erro mais comum da fase.",
+      "labels": ["fase:ii", "tipo:atividade", "papel:ml", "papel:software", "papel:demandante"],
+      "description": "Separar objetivo de negócio, de sistema e de modelo (B.1); ligar indicadores de negócio a métricas técnicas com linha de base, meta e critério de fracasso (B.2); descrever o caso de uso de IA com atores, entradas, saídas, limites e ponto de supervisão humana (B.3); levantar preocupações nas cinco perspectivas do PerSpecML — Atividade 4 do cronograma (B.4); desenhar arquitetura com a fronteira modelo/sistema (contrato, threshold, fallback) e mockups mostrando onde aparecem explicação e feedback (B.5).",
       "entregaveis": [
-        "Parte B.1 de docs/M2_viabilidade_concepcao.md."
+        "Seções B.1 a B.5 do M2.",
+        "Diagrama de arquitetura e mockups versionados no repositório."
       ],
       "criterios_aceite": [
         "Separação correta entre objetivo de negócio, de sistema e de modelo.",
-        "Conexão explícita entre a meta técnica e a mudança esperada no mundo."
+        "Toda métrica técnica está associada a um indicador de negócio; critério de fracasso explícito.",
+        "Ponto de supervisão humana localizado no fluxo, com comportamento em caso de erro."
       ]
     },
     {
-      "title": "[Documento] Métricas de impacto e critérios de sucesso e fracasso (F2.SP2.DO2)",
+      "title": "[Atividade] Viabilidade: EDA, PoC com baseline e matriz de risco (Parte C do M2 + notebooks/poc.ipynb)",
       "milestone": "M2",
-      "labels": ["fase:ii", "tipo:documento", "papel:ml", "papel:demandante"],
-      "description": "Ligar cada indicador de negócio a uma métrica técnica, com linha de base, meta e forma de medição. Declarar o critério de fracasso: a partir de que resultado a solução deve ser abandonada.",
-      "entregaveis": [
-        "Parte B.2 de docs/M2_viabilidade_concepcao.md, incluindo critério de fracasso."
-      ],
-      "criterios_aceite": [
-        "Toda métrica técnica está associada a um indicador de negócio.",
-        "Linha de base declarada (ou justificada como indisponível).",
-        "Critério de fracasso explícito."
-      ]
-    },
-    {
-      "title": "[Documento] Caso de uso de IA e ponto de supervisão humana (F2.SP2.DO3)",
-      "milestone": "M2",
-      "labels": ["fase:ii", "tipo:documento", "papel:software"],
-      "description": "Descrever atores, entradas, saídas, limites de uso, o ponto em que uma pessoa aceita/rejeita/corrige e o que acontece quando o sistema erra.",
-      "entregaveis": [
-        "Parte B.3 de docs/M2_viabilidade_concepcao.md."
-      ],
-      "criterios_aceite": [
-        "Ponto de supervisão humana localizado no fluxo, não descrito em abstrato.",
-        "Comportamento em caso de erro definido."
-      ]
-    },
-    {
-      "title": "[Documento] Especificação PerSpecML - cinco perspectivas (F2.SP2.DO4)",
-      "milestone": "M2",
-      "labels": ["fase:ii", "tipo:documento", "papel:ml", "papel:software"],
-      "description": "Levantar preocupações nas perspectivas de objetivos, interação do usuário, dados, modelo e infraestrutura.",
-      "entregaveis": [
-        "Parte B.4 de docs/M2_viabilidade_concepcao.md com as cinco perspectivas preenchidas."
-      ],
-      "criterios_aceite": [
-        "Nenhuma perspectiva vazia; quando não se aplica, está escrito por quê."
-      ]
-    },
-    {
-      "title": "[Documento] Arquitetura da solução e mockups (F2.SP2.DO5/DO6)",
-      "milestone": "M2",
-      "labels": ["fase:ii", "tipo:documento", "papel:software"],
-      "description": "Diagrama de componentes, integrações, fluxo de dados, implantação, segurança e observabilidade; mockups das telas ou do formato de saída, mostrando onde aparecem a explicação e o ponto de feedback do usuário. Definir a fronteira entre o componente de IA e o resto do sistema (contrato, threshold, fallback).",
-      "entregaveis": [
-        "Parte B.5 de docs/M2_viabilidade_concepcao.md com diagrama e mockups versionados no repositório."
-      ],
-      "criterios_aceite": [
-        "A fronteira modelo ↔ sistema está explícita, com contrato de serviço e comportamento de fallback.",
-        "Mockups mostram como a saída da IA é apresentada e corrigida."
-      ]
-    },
-    {
-      "title": "[Atividade] EDA e avaliação de qualidade dos dados (F2.SP1.DO2)",
-      "milestone": "M2",
-      "labels": ["fase:ii", "tipo:atividade", "papel:dados"],
-      "description": "Analisar volume e período, cobertura e representatividade, valores ausentes e inconsistências, desbalanceamento, vieses e restrições de acesso/sigilo/privacidade, concluindo sobre a suficiência dos dados. Na trilha FMware, o equivalente é a análise do corpus e do índice do RAG.",
-      "entregaveis": [
-        "Parte C.1 de docs/M2_viabilidade_concepcao.md.",
-        "Células correspondentes em notebooks/poc.ipynb."
-      ],
-      "criterios_aceite": [
-        "Conclusão explícita sobre suficiência dos dados, sustentada pelas células do notebook.",
-        "Vieses e lacunas declarados sem maquiagem."
-      ]
-    },
-    {
-      "title": "[Código] PoC exploratória com baseline e análise de erro (F2.SP1.DO3)",
-      "milestone": "M2",
-      "labels": ["fase:ii", "tipo:codigo", "papel:ml"],
-      "description": "Implementar em notebooks/poc.ipynb um baseline simples e uma abordagem candidata, com métricas e análise de erro preliminar. A PoC é exploratória e não precisa ser código de produção. Trilha FMware: baseline é a resposta sem RAG, um modelo menor ou uma solução determinística, e a avaliação usa um conjunto de evals.",
+      "labels": ["fase:ii", "tipo:atividade", "papel:dados", "papel:ml"],
+      "description": "Em notebooks/poc.ipynb: EDA com volume, cobertura, representatividade, ausências, desbalanceamento, vieses e restrições de acesso (Atividade 5 do cronograma); baseline simples e uma abordagem candidata com métricas e análise de erro preliminar. Trilha FMware: corpus/índice no lugar do dataset; baseline sem RAG, modelo menor ou solução determinística; conjunto de evals. Registrar a matriz de risco técnico, de dados, operacional, ético e legal com mitigação. A PoC é exploratória — não precisa ser código de produção — mas o notebook deve reexecutar a partir do repositório.",
       "entregaveis": [
         "notebooks/poc.ipynb reexecutável, com dependências declaradas.",
-        "Parte C.2 de docs/M2_viabilidade_concepcao.md com métricas, análise de erro e limitações da PoC."
+        "Seções C.1 a C.3 do M2 apontando para as células que sustentam cada afirmação."
       ],
       "criterios_aceite": [
-        "Baseline adotado e comparado à abordagem candidata.",
-        "Notebook reexecutável por terceiros a partir do repositório.",
-        "Limitações da PoC declaradas."
+        "Conclusão explícita sobre suficiência dos dados, sustentada pelo notebook.",
+        "Baseline adotado e comparado à abordagem candidata; limitações da PoC declaradas.",
+        "As cinco categorias de risco contempladas, com mitigação."
       ]
     },
     {
-      "title": "[Documento] Matriz de risco e mitigação (F2.SP1.DO4)",
+      "title": "[Entregável] M2 — Documento de Viabilidade e Concepção (docs/M2_viabilidade_concepcao.md) · 12/10",
       "milestone": "M2",
-      "labels": ["fase:ii", "tipo:documento"],
-      "description": "Registrar riscos técnicos, de dados, operacionais, éticos e legais, com probabilidade, impacto e mitigação proposta. Trilha FMware: incluir drift de fornecedor, custo por token, latência e injeção de prompt.",
+      "labels": ["fase:ii", "tipo:entregavel"],
+      "description": "Único documento da Fase II, com notebooks/poc.ipynb como evidência anexa. Partes: A Rapid Review (F2.DO1) · B Concepção (F2.SP2.DO1–DO6) · C Viabilidade (F2.SP1.DO2–DO4) · D Consolidação — parecer de viabilidade viável / viável com ressalvas / inviável (F2.DO2) e plano de desenvolvimento do MVP com escopo mínimo, escopo excluído, backlog inicial no GitHub Projects, cronograma dos incrementos, métrica mínima aceitável e critérios de aceite nas 5 dimensões (F2.DO4). Um \"inviável\" bem fundamentado é um resultado forte. Entregar até 12/10, 23h59. Observação: a construção do MVP não espera a banca G2 — assim que o escopo mínimo se estabiliza (aula 16), o primeiro incremento já começa.",
       "entregaveis": [
-        "Parte C.3 de docs/M2_viabilidade_concepcao.md."
+        "docs/M2_viabilidade_concepcao.md com as Partes A–D preenchidas.",
+        "notebooks/poc.ipynb referenciado a partir da Parte C.",
+        "Backlog do MVP criado no GitHub Projects e linkado em D.2.",
+        "Checklist de critérios mínimos de aceite autoavaliado."
       ],
       "criterios_aceite": [
-        "As cinco categorias de risco contempladas.",
-        "Cada risco relevante tem mitigação proposta e responsável."
-      ]
-    },
-    {
-      "title": "[Documento] Estimativa de custo, latência e dependência de fornecedor (trilha FMware)",
-      "milestone": "M2",
-      "labels": ["fase:ii", "tipo:documento", "trilha:fmware", "papel:ml"],
-      "description": "Requisito acrescentado pela disciplina para grupos de trilha FMware ou híbrida: estimar custo por operação e latência esperada, e analisar a dependência do fornecedor do modelo fundacional (mudança de versão, indisponibilidade, alternativa de troca). Grupos de trilha ML sob medida devem fechar esta issue registrando que não se aplica e por quê.",
-      "entregaveis": [
-        "Seção de custo/latência e análise de dependência de fornecedor no M2."
-      ],
-      "criterios_aceite": [
-        "Custo e latência estimados com a premissa de volume declarada.",
-        "Plano (ainda que mínimo) para troca ou indisponibilidade do fornecedor."
-      ]
-    },
-    {
-      "title": "[Documento] Parecer de viabilidade e plano de desenvolvimento do MVP (F2.DO2/F2.DO4)",
-      "milestone": "M2",
-      "labels": ["fase:ii", "tipo:documento", "rastreabilidade"],
-      "description": "Concluir viável / viável com ressalvas / inviável, apoiado na evidência de EDA e PoC, separando o que ainda é hipótese. Definir escopo mínimo do MVP, escopo excluído e por quê, backlog inicial no GitHub Projects, cronograma dos incrementos, métrica mínima aceitável do modelo e critérios de aceite nas cinco dimensões. Um \"inviável\" bem fundamentado é um resultado forte.",
-      "entregaveis": [
-        "Parte D de docs/M2_viabilidade_concepcao.md.",
-        "Backlog do MVP criado no GitHub Projects com épicos, histórias e critérios de pronto."
-      ],
-      "criterios_aceite": [
+        "Pergunta, escopo, fontes, critérios e simplificações metodológicas da Rapid Review registrados.",
+        "Registro de busca e seleção suficiente para rastrear as fontes usadas.",
+        "Literatura cinza justificada quando utilizada, com credibilidade e limitações.",
+        "Achados sintetizados de forma orientada à decisão, com implicações para viabilidade e concepção.",
+        "Hipóteses, lacunas, riscos e recomendações explicitados, cada um com como validar e artefato destino.",
+        "Separação correta entre objetivo de negócio, de sistema e de modelo.",
         "Coerência entre o parecer de viabilidade e as evidências de EDA e PoC.",
-        "Exequibilidade do plano do MVP no prazo restante (até 09/11).",
-        "Escopo excluído registrado com justificativa."
+        "Exequibilidade do plano do MVP no prazo restante (até 09/11)."
       ]
     },
     {
-      "title": "[Gate] G2 - Viabilidade e Concepção (13/10)",
+      "title": "[Banca] G2 — Viabilidade e Concepção · 13/10 (aula 19)",
       "milestone": "M2",
-      "labels": ["fase:ii", "tipo:gate"],
-      "description": "Perguntas do gate: as evidências são suficientes e consistentes para justificar a construção? O que ainda é hipótese? O escopo do MVP é executável no prazo restante? Lembrete do guia: a construção do MVP não espera o G2 — assim que o escopo mínimo se estabiliza, o primeiro incremento já começa.",
+      "labels": ["fase:ii", "tipo:banca"],
+      "description": "Perguntas: as evidências são suficientes e consistentes para justificar a construção? O que ainda é hipótese? O escopo do MVP é executável no prazo restante? Regra do processo (F2.A3): se não forem, o grupo ajusta concepção, viabilidade ou escopo e retorna — e isso deve ser registrado, não escondido.",
       "entregaveis": [
-        "docs/M2_viabilidade_concepcao.md e notebooks/poc.ipynb entregues em 12/10 até 23h59.",
-        "Slides (10 min) e registro da decisão do gate."
+        "Slides (10 min) e demonstração breve da PoC.",
+        "Decisão e condicionantes da banca registradas no bloco de Validação do M2; condicionantes do G1 resolvidas ou justificadas."
       ],
       "criterios_aceite": [
-        "Critérios de aceite de F2.DO1, F2.DO2 e F2.DO3 atendidos e evidenciados.",
-        "Condicionantes do G1 resolvidas ou justificadas."
+        "Grupo distingue o que é evidência (EDA, PoC, Rapid Review) do que é hipótese.",
+        "Escopo do MVP defendido como exequível com o calendário da Fase III."
       ]
     },
     {
-      "title": "[Código] Pipeline de dados reprodutível e dados versionados (F3.DS2)",
+      "title": "[Atividade] Pipeline de dados reprodutível e dados versionados (F3.DS2)",
       "milestone": "M3",
-      "labels": ["fase:iii", "tipo:codigo", "papel:dados"],
-      "description": "Implementar o pipeline de preparação dos dados de forma reprodutível, com versionamento (DVC ou equivalente) e dados brutos fora do git. Documentar fontes, período, filtros e versão. Trilha FMware: corpus e índice vetorial versionados no lugar do dataset de treino/teste.",
+      "labels": ["fase:iii", "tipo:atividade", "papel:dados"],
+      "description": "Implementar em src/ o pipeline de preparação dos dados de forma reprodutível, com versionamento (DVC ou equivalente) e dados brutos fora do git; documentar fontes, período, filtros e versão; executar verificações mínimas de qualidade. Trilha FMware: corpus e índice vetorial versionados. Alimenta a Dimensão 3 do checklist e a seção 5 do M3.",
       "entregaveis": [
-        "Script/job do pipeline em src/ com execução documentada.",
-        "Catálogo de dados (fontes, período, filtros, versão).",
-        "data/ versionado; dados brutos fora do git."
+        "Script/job do pipeline com execução documentada no README.",
+        "Catálogo de dados (fontes, período, filtros, versão) e data/ versionado."
       ],
       "criterios_aceite": [
         "Pipeline reprodutível por terceiros a partir de um clone limpo.",
-        "Verificações mínimas de qualidade dos dados executadas e registradas.",
-        "Restrições de acesso, sigilo e proteção de dados tratadas."
+        "Verificações de qualidade executadas e registradas; restrições de acesso e proteção de dados tratadas."
       ]
     },
     {
-      "title": "[Código] Treinar/configurar o componente de IA e registrar a versão (F3.DS3)",
+      "title": "[Atividade] Componente de IA registrado e avaliação offline contra baseline (F3.DS3, F3.DO3)",
       "milestone": "M3",
-      "labels": ["fase:iii", "tipo:codigo", "papel:ml"],
-      "description": "Produzir a versão do componente de IA usada no MVP, registrada com parâmetros e resultados (MLflow ou equivalente), rastreável aos dados e ao código. Trilha FMware: prompts versionados em prompts/ com histórico de alterações, mais a configuração (modelo, temperatura, ferramentas).",
+      "labels": ["fase:iii", "tipo:atividade", "papel:ml"],
+      "description": "Produzir a versão do componente de IA do MVP, registrada com parâmetros e resultados (MLflow ou equivalente) e rastreável a dados e código; comparar ao baseline nas métricas do plano com análise de erro (onde erra, com que padrão, para quem) e limitações declaradas. Trilha FMware: prompts versionados em prompts/ com histórico; conjunto de evals com juiz humano ou LLM-as-judge, taxa de alucinação e aderência ao formato. Alimenta a seção 3 e a Dimensão 2 do checklist do M3.",
       "entregaveis": [
-        "models/ (ou prompts/) com a versão de referência e seus parâmetros.",
-        "Vínculo versão do modelo ↔ commit ↔ versão dos dados."
-      ],
-      "criterios_aceite": [
-        "Versão do modelo é rastreável aos dados e ao código usados.",
-        "Reexecução do treino/configuração documentada no RUNBOOK."
-      ]
-    },
-    {
-      "title": "[Código] Avaliação offline contra baseline e análise de erro (F3.DO3)",
-      "milestone": "M3",
-      "labels": ["fase:iii", "tipo:codigo", "papel:ml"],
-      "description": "Comparar o modelo ao baseline nas métricas definidas no plano do MVP, com análise de erro (onde erra, com que padrão, para quem) e limitações declaradas. Trilha FMware: conjunto de evals com juiz humano ou LLM-as-judge, taxa de alucinação e aderência ao formato.",
-      "entregaveis": [
-        "Tabela métrica × baseline × modelo × meta do plano × atingida?",
-        "Seção 3 de docs/M3_mvp.md com análise de erro e limitações.",
-        "Script ou notebook de avaliação versionado."
+        "models/ (ou prompts/ + evals/) com a versão de referência e vínculo a commit e versão dos dados.",
+        "Tabela métrica × baseline × modelo × meta × atingida? e script de avaliação reexecutável."
       ],
       "criterios_aceite": [
         "Métrica mínima do plano atingida ou justificadamente revisada.",
-        "Baseline, análise de erro e limitações registrados.",
-        "Avaliação reexecutável."
+        "Baseline, análise de erro e limitações registrados; versão do modelo rastreável a dados e código."
       ]
     },
     {
-      "title": "[Código] Protótipo funcional: pipeline + componente de IA + API/interface (F3.DO2)",
+      "title": "[Atividade] Protótipo funcional com API/interface, testes nos três níveis e CI (F3.DO2, F3.DS1)",
       "milestone": "M3",
-      "labels": ["fase:iii", "tipo:codigo", "papel:software", "papel:ml"],
-      "description": "Entregar a menor versão funcional capaz de demonstrar valor e testar a hipótese técnica, executando o fluxo mínimo de ponta a ponta. Um notebook isolado não é um MVP.",
+      "labels": ["fase:iii", "tipo:atividade", "papel:software", "papel:ml"],
+      "description": "Entregar a menor versão funcional que executa o fluxo mínimo de ponta a ponta — pipeline + componente de IA + API ou interface; um notebook isolado não é um MVP. Definir salvaguardas (threshold, fallback, supervisão humana; guardrails na trilha FMware). Implementar testes de dados (schema, distribuição), de modelo (comportamento, casos de borda) e de software (unitários, integração) rodando em .github/workflows/ — Atividades 7 e 8 do cronograma. Alimenta a seção 2 e as Dimensões 1, 2 e 4 do checklist.",
       "entregaveis": [
-        "Código em src/ com comando de execução documentado (deve funcionar em máquina limpa).",
-        "Seção 2 de docs/M3_mvp.md com versão avaliada (tag/commit) e fluxo mínimo demonstrável."
+        "src/ executável em máquina limpa, com comando documentado e tag da versão avaliada.",
+        "tests/ com os três níveis e workflow de CI verde no histórico do repositório."
       ],
       "criterios_aceite": [
-        "Fluxo prioritário executável pelo usuário ou demonstrável de ponta a ponta.",
-        "Repositório, versão e dependências registrados (commit, tag, ambiente, pacote).",
-        "Salvaguardas de uso definidas: threshold, fallback ou supervisão humana."
+        "Fluxo prioritário demonstrável de ponta a ponta.",
+        "Testes de dados e de modelo presentes, não apenas unitários de código; estratégia para não determinismo documentada.",
+        "Salvaguardas de uso definidas e implementadas."
       ]
     },
     {
-      "title": "[Código] Testes de dados, de modelo e de software rodando em CI",
+      "title": "[Atividade] Ambiente de homologação e RUNBOOK.md inicial (F3.DS4, F3.DO4)",
       "milestone": "M3",
-      "labels": ["fase:iii", "tipo:codigo", "papel:software", "papel:dados"],
-      "description": "Implementar os três níveis de teste: dados (schema, distribuição), modelo (comportamento, casos de borda, testes sob não determinismo) e software (unitários e de integração), executados automaticamente em .github/workflows/.",
+      "labels": ["fase:iii", "tipo:atividade", "papel:software"],
+      "description": "Empacotar o MVP (container ou deploy simples) para que outra equipe consiga subi-lo sem ajuda dos autores — precondição do piloto cruzado (M4) e do handover (M5). Escrever o RUNBOOK.md com operação, incidentes, rollback, trilha de auditoria (o que fica registrado a cada predição), riscos atualizados em relação ao M2 e plano inicial de monitoramento para o piloto. Alimenta a seção 4 e as Dimensões 4 e 5 do checklist.",
       "entregaveis": [
-        "tests/ com os três níveis cobertos.",
-        "Workflow de CI verde no repositório, com execução visível no histórico."
-      ],
-      "criterios_aceite": [
-        "Testes mínimos de código, API, integração ou UI executados em CI.",
-        "Testes de dados e de modelo presentes, não apenas unitários de código.",
-        "Estratégia adotada para lidar com não determinismo está documentada."
-      ]
-    },
-    {
-      "title": "[Código] Ambiente de homologação executável por terceiros (F3.DS4)",
-      "milestone": "M3",
-      "labels": ["fase:iii", "tipo:codigo", "papel:software"],
-      "description": "Empacotar o MVP (container ou deploy simples) de modo que outra equipe consiga subi-lo sem ajuda dos autores — precondição direta do piloto cruzado (M4) e da transferência (M5).",
-      "entregaveis": [
-        "Dockerfile/compose ou script de deploy, com instruções no README.",
-        "Registro de um teste de subida feito por alguém que não escreveu o código."
+        "Dockerfile/compose ou script de deploy com instruções no README.",
+        "RUNBOOK.md na raiz do repositório.",
+        "Registro de uma subida feita por alguém que não escreveu o código."
       ],
       "criterios_aceite": [
         "Terceiros conseguem executar o sistema a partir da documentação.",
-        "Logs, autenticação, configuração e tratamento de falhas definidos para o piloto."
+        "Logs, configuração, tratamento de falhas, trilha de auditoria e plano de monitoramento definidos para o piloto."
       ]
     },
     {
-      "title": "[Documento] RUNBOOK.md: operação, incidentes, rollback e monitoramento (F3.DO4)",
+      "title": "[Atividade] Atualizar docs/uso_de_ia.md para a discussão na banca G3",
       "milestone": "M3",
-      "labels": ["fase:iii", "tipo:documento", "papel:software"],
-      "description": "Escrever o runbook inicial com operação, tratamento de incidentes, rollback, trilha de auditoria (o que fica registrado a cada predição), riscos atualizados em relação ao M2 e plano inicial de monitoramento para o piloto.",
+      "labels": ["fase:iii", "tipo:atividade", "ai4se"],
+      "description": "A Fase III é onde a dívida cognitiva aparece: código gerado além da capacidade da equipe de entender e manter. Atualizar o registro com o que foi aceito sem revisão, onde a IA errou e que partes do sistema a equipe não conseguiria explicar hoje. O registro é discutido na banca G3 e conta como evidência de honestidade técnica.",
       "entregaveis": [
-        "RUNBOOK.md na raiz do repositório.",
-        "Seção 4 de docs/M3_mvp.md com riscos atualizados e trilha de auditoria."
+        "docs/uso_de_ia.md com entradas das Fases II e III."
       ],
       "criterios_aceite": [
-        "Runbook, trilha de auditoria e responsáveis definidos.",
-        "Plano inicial de monitoramento para o piloto definido.",
-        "Riscos técnicos, operacionais, éticos e legais registrados e atualizados."
+        "Registro honesto e específico (arquivos, módulos, decisões), discutível na banca."
       ]
     },
     {
-      "title": "[Documento] Checklist de aceite do MVP nas 5 dimensões (F3.DO5)",
+      "title": "[Entregável] M3 — Documento Consolidado do MVP (docs/M3_mvp.md) · 09/11",
       "milestone": "M3",
-      "labels": ["fase:iii", "tipo:documento", "rastreabilidade"],
-      "description": "Preencher o checklist oficial nas dimensões valor e uso, modelo, dados, software e governança. Para cada critério: Sim/Parcial/Não, com a evidência e a pendência correspondente. Uma dimensão inteiramente \"Não\" bloqueia o avanço, mesmo com as outras quatro perfeitas.",
+      "labels": ["fase:iii", "tipo:entregavel"],
+      "description": "Único documento da Fase III; o repositório funcional é a evidência que ele referencia. Seções: 1 Escopo entregue e backlog com histórico de sprints (F3.DO1) · 2 Protótipo funcional — versão, como executar, fluxo mínimo (F3.DO2) · 3 Avaliação offline (F3.DO3) · 4 Documentação e governança (F3.DO4) · 5 Rastreabilidade técnica dos Data Stores DS1–DS4 · 6 Checklist de qualidade e aceite nas 5 dimensões, 18 critérios, cada um Sim/Parcial/Não com evidência e pendência (F3.DO5) · 7 Recomendação para a banca (F3.DO6). Uma dimensão inteiramente \"Não\" bloqueia o avanço, mesmo com as outras quatro perfeitas. Entregar até 09/11, 23h59; a Semana de Desenvolvimento (03 e 05/11) é para fechar o MVP, não para começá-lo.",
       "entregaveis": [
-        "Seção 6 de docs/M3_mvp.md com as 5 dimensões preenchidas.",
-        "Tabela de pendências separando bloqueantes de não bloqueantes, com responsável e prazo.",
-        "Resultado geral: aprovado / aprovado com ressalvas / retornar para ajustes / não aprovado."
+        "docs/M3_mvp.md com as 7 seções preenchidas.",
+        "Checklist F3.DO5 com resultado geral (aprovado / com ressalvas / retornar / não aprovado) e pendências bloqueantes × não bloqueantes com responsável e prazo.",
+        "Tag/commit da versão avaliada e link do GitHub Projects."
       ],
       "criterios_aceite": [
-        "Toda resposta \"Sim\" tem evidência apontada (commit, log, teste, ata).",
-        "Nenhuma dimensão inteiramente \"Não\".",
-        "Demandante validou o incremento final e foi informado das limitações de uso."
+        "Dimensão 1 — Valor e uso: fluxo prioritário demonstrável; demandante validou o incremento; valor associado ao MVP; limitações comunicadas.",
+        "Dimensão 2 — Modelo: métrica mínima atingida ou revisada; baseline, erro e limitações registrados; versão rastreável; salvaguardas definidas.",
+        "Dimensão 3 — Dados: fontes documentadas; pipeline reprodutível; qualidade verificada; restrições de acesso tratadas.",
+        "Dimensão 4 — Software: protótipo executa o fluxo mínimo; repositório e dependências registrados; testes em CI; logs, configuração e falhas definidos.",
+        "Dimensão 5 — Governança: runbook, auditoria e responsáveis; riscos registrados; plano de monitoramento; condições de avanço ao piloto.",
+        "Toda resposta \"Sim\" aponta evidência verificável (commit, log, teste, ata)."
       ]
     },
     {
-      "title": "[Atividade] Consolidar backlog executado e rastreabilidade do M3 (F3.DO1)",
+      "title": "[Banca] G3 — MVP · 10/11 (aula 24) · sorteio do pareamento do piloto",
       "milestone": "M3",
-      "labels": ["fase:iii", "tipo:atividade", "rastreabilidade"],
-      "description": "Registrar o histórico de sprints (objetivo, entregue, aprendizado), itens concluídos × planejados e o que ficou fora e por quê, com link do GitHub Projects. Atualizar docs/uso_de_ia.md — insumo do gate G3.",
+      "labels": ["fase:iii", "tipo:banca"],
+      "description": "Perguntas: o MVP atende às cinco dimensões de aceite? O que é demonstrável agora e o que ainda é promessa? Outra pessoa consegue executá-lo? Inclui discussão do docs/uso_de_ia.md. Ao final, o professor sorteia o pareamento das equipes para o piloto cruzado (10/11 a 16/11).",
       "entregaveis": [
-        "Seção 1 e tabela de Data Stores (seção 5) de docs/M3_mvp.md.",
-        "docs/uso_de_ia.md atualizado com o que foi aceito sem revisão e o que a equipe não conseguiria explicar."
-      ],
-      "criterios_aceite": [
-        "Histórico do repositório e do backlog mostram trabalho distribuído e incremental.",
-        "Registro de uso de IA honesto e discutível no gate."
-      ]
-    },
-    {
-      "title": "[Gate] G3 - MVP (10/11) e sorteio do pareamento do piloto",
-      "milestone": "M3",
-      "labels": ["fase:iii", "tipo:gate"],
-      "description": "Perguntas do gate: o MVP atende às cinco dimensões? O que é demonstrável agora e o que ainda é promessa? Outra pessoa consegue executá-lo? Ao final, o professor sorteia o pareamento das equipes para o piloto cruzado.",
-      "entregaveis": [
-        "Repositório funcional e docs/M3_mvp.md entregues em 09/11 até 23h59.",
-        "Demonstração ao vivo do fluxo mínimo.",
-        "Registro do pareamento sorteado."
+        "Demonstração ao vivo do fluxo mínimo a partir do repositório.",
+        "Decisão da banca registrada no M3; pareamento do piloto registrado no README."
       ],
       "criterios_aceite": [
         "Checklist F3.DO5 apresentado na íntegra, com evidências.",
-        "Sistema executado a partir do repositório, sem intervenção manual não documentada."
+        "Sistema executado sem intervenção manual não documentada."
       ]
     },
     {
-      "title": "[Documento] Plano do piloto cruzado (F4.DO1)",
+      "title": "[Atividade] Planejar e executar o piloto cruzado (10/11 a 16/11) — como equipe avaliada e como equipe usuária",
       "milestone": "M4",
-      "labels": ["fase:iv", "tipo:documento"],
-      "description": "Definir equipe usuária (pareada no G3), período (10/11 a 16/11), escopo de uso, casos de uso a executar, indicadores coletados, salvaguardas ativas e critérios de interrupção.",
+      "labels": ["fase:iv", "tipo:atividade", "papel:software", "papel:demandante"],
+      "description": "Antes de iniciar: definir escopo de uso, casos de uso, indicadores coletados, salvaguardas ativas e critérios de interrupção, e entregar o roteiro à equipe pareada (F4.DO1). Durante a semana, duas frentes: dar suporte ao uso do próprio sistema, coletando indicadores e registrando incidentes com data, severidade e ação; e usar o sistema da outra equipe com casos reais do domínio, registrando erros, desvios e fricções. Produzir o relato de uso de 1 página para o grupo avaliado (anexo do M4 dele).",
       "entregaveis": [
-        "Seção 1 de docs/M4_piloto.md.",
-        "Roteiro de casos de uso entregue à equipe usuária."
+        "Plano do piloto (seção 1 do M4) e roteiro entregue à equipe usuária.",
+        "Log de uso, indicadores e incidentes do próprio sistema.",
+        "Relato de uso de 1 página entregue à outra equipe até 16/11."
       ],
       "criterios_aceite": [
-        "Indicadores e critérios de interrupção definidos antes do início do piloto.",
-        "Salvaguardas ativas listadas e efetivamente habilitadas no sistema."
+        "Indicadores e critérios de interrupção definidos antes do início; salvaguardas efetivamente habilitadas.",
+        "Relato de uso entregue no prazo com o que tentaram fazer, o que funcionou, o que quebrou e o que confundiu."
       ]
     },
     {
-      "title": "[Atividade] Executar o piloto e operar como equipe usuária de outro grupo (10/11 a 16/11)",
+      "title": "[Atividade] Curar o golden set e comparar desempenho offline × campo (F4.DO2, F4.DO3)",
       "milestone": "M4",
-      "labels": ["fase:iv", "tipo:atividade", "papel:software"],
-      "description": "Duas frentes na mesma semana: acompanhar o uso do próprio sistema pela equipe pareada (suporte, coleta de indicadores, registro de incidentes) e usar o sistema da outra equipe com casos de uso reais do domínio, registrando o que encontrar.",
+      "labels": ["fase:iv", "tipo:atividade", "papel:dados", "papel:ml"],
+      "description": "Curar em data/golden_set/ os casos reais do piloto com a correção humana quando o sistema errou, registrando critério de curadoria, formato, metadados e uso futuro (re-treino, regressão, avaliação). Comparar as métricas do M3 com o desempenho observado no piloto, com hipótese para cada diferença; analisar sinais de drift, fricções de uso e evidência (ou ausência) de valor. Alimenta as seções 2 e 3 do M4.",
       "entregaveis": [
-        "Log de execução do piloto (uso, incidentes, indicadores).",
-        "Relato de uso de 1 página produzido como equipe usuária, entregue ao grupo avaliado."
-      ],
-      "criterios_aceite": [
-        "Relato de uso entregue no prazo e com conteúdo utilizável (o que tentaram fazer, o que funcionou, o que quebrou, o que confundiu).",
-        "Incidentes registrados com data, severidade e ação tomada."
-      ]
-    },
-    {
-      "title": "[Documento] Curar o golden set do piloto (F4.DO2)",
-      "milestone": "M4",
-      "labels": ["fase:iv", "tipo:documento", "papel:dados", "papel:ml"],
-      "description": "Curar em data/golden_set/ os casos reais do piloto, com a correção humana quando o sistema errou, registrando critério de curadoria, formato e metadados, e para que servirá (re-treino, teste de regressão, avaliação futura).",
-      "entregaveis": [
-        "data/golden_set/ versionado.",
-        "Seção 2 de docs/M4_piloto.md com nº de casos, nº de correções humanas e critério de curadoria."
+        "data/golden_set/ versionado com nº de casos e nº de correções humanas.",
+        "Tabela offline × piloto × variação × hipótese e análise de drift."
       ],
       "criterios_aceite": [
         "Golden set utilizável por terceiros: formato documentado e casos rastreáveis ao piloto.",
-        "Uso futuro declarado."
+        "Comparação honesta entre offline e campo, inclusive quando piorou."
       ]
     },
     {
-      "title": "[Documento] Relatório de validação de campo: offline × piloto (F4.DO3)",
+      "title": "[Atividade] Avaliar salvaguardas éticas e supervisão humana com evidência do piloto (F4.DO4)",
       "milestone": "M4",
-      "labels": ["fase:iv", "tipo:documento", "papel:ml", "rastreabilidade"],
-      "description": "Comparar métricas do M3 com o desempenho no piloto, com hipótese para cada diferença; registrar indicador de negócio observado, evidência (ou ausência) de valor, fricções de uso, incidentes e sinais de drift.",
+      "labels": ["fase:iv", "tipo:atividade", "papel:demandante"],
+      "description": "Comparar, dimensão por dimensão, a salvaguarda prevista no M2/M3 com a evidência observada no piloto: supervisão humana, transparência ao usuário, explicabilidade, não discriminação e proteção de dados. Responder com evidência as quatro perguntas obrigatórias (o usuário compreendeu o papel da IA? houve capacidade real de aceitar, rejeitar ou corrigir? há sinais de viés de automação? o canal de escalonamento funcionou?). Classificar riscos e achados por severidade com medida, responsável e prazo. Não é um texto sobre boas intenções.",
       "entregaveis": [
-        "Seção 3 de docs/M4_piloto.md com tabela offline × campo e variação."
+        "Tabela das cinco dimensões (salvaguarda prevista × evidência × parecer).",
+        "Respostas às quatro perguntas de supervisão humana com evidência.",
+        "Riscos e achados por severidade; ajustes obrigatórios separados dos recomendados."
       ],
       "criterios_aceite": [
-        "Comparação honesta entre desempenho offline e em campo, inclusive quando piorou.",
-        "Sinais de drift analisados ou ausência justificada.",
-        "Fricções relatadas pela equipe usuária incorporadas ao relatório."
+        "Cada dimensão confrontada com evidência concreta do piloto, não descrita em abstrato.",
+        "Conclusão explícita: adequado / adequado com ajustes / não recomendado para escala."
       ]
     },
     {
-      "title": "[Documento] Parecer de ajuste ético e supervisão humana (F4.DO4)",
+      "title": "[Entregável] M4 — Documento Consolidado do Piloto (docs/M4_piloto.md) · 18/11",
       "milestone": "M4",
-      "labels": ["fase:iv", "tipo:documento"],
-      "description": "Comparar salvaguarda prevista × evidência observada no piloto, dimensão por dimensão (supervisão humana, transparência, explicabilidade, não discriminação, proteção de dados). Responder com evidência as quatro perguntas obrigatórias sobre supervisão humana na prática, incluindo sinais de viés de automação. Não é um texto sobre boas intenções.",
+      "labels": ["fase:iv", "tipo:entregavel"],
+      "description": "Único documento da Fase IV. Seções: 1 Plano do piloto (F4.DO1) · 2 Golden set (F4.DO2) · 3 Relatório de validação de campo — offline × campo, uso e valor, incidentes, sinais de drift (F4.DO3) · 4 Parecer de ajuste ético — salvaguardas, supervisão humana na prática, riscos e achados (F4.DO4) · 5 Recomendação: escalar / novo ciclo de ajustes / encerrar, com condicionantes verificáveis (F4.DO5) · 6 Relato da equipe usuária (anexo de 1 página, produzido pela equipe pareada). Entregar até 18/11, 23h59.",
       "entregaveis": [
-        "Seção 4 de docs/M4_piloto.md com a tabela das cinco dimensões.",
-        "Riscos e achados classificados por severidade, com medida, responsável e prazo.",
-        "Conclusão: adequado / adequado com ajustes / não recomendado para escala, separando ajustes obrigatórios dos recomendados."
+        "docs/M4_piloto.md com as 6 seções preenchidas.",
+        "Anexo com o relato da equipe usuária.",
+        "Checklist de critérios mínimos de aceite autoavaliado."
       ],
       "criterios_aceite": [
-        "Cada dimensão confrontada com evidência concreta do piloto.",
-        "As quatro perguntas sobre supervisão humana respondidas com evidência.",
-        "Achados vinculados a medidas de mitigação."
+        "Salvaguardas planejadas comparadas com evidências do piloto, não descritas em abstrato.",
+        "Supervisão humana, transparência, explicabilidade, não discriminação e proteção de dados avaliadas uma a uma.",
+        "Achados classificados por severidade e vinculados a medidas de mitigação.",
+        "Conclusão explícita: adequado / adequado com ajustes / não recomendado para escala.",
+        "Qualidade e utilidade do golden set produzido.",
+        "Comparação honesta entre desempenho offline e desempenho em campo."
       ]
     },
     {
-      "title": "[Documento] Recomendação pós-piloto: escalar, ajustar ou encerrar (F4.DO5)",
+      "title": "[Banca] G4 — Piloto · 19/11 (aula 27)",
       "milestone": "M4",
-      "labels": ["fase:iv", "tipo:documento"],
-      "description": "Registrar a recomendação fundamentada e as condicionantes verificáveis para a próxima fase.",
+      "labels": ["fase:iv", "tipo:banca"],
+      "description": "Perguntas: o desempenho se sustentou fora do laboratório? As salvaguardas funcionaram no uso real, e não só no papel? O relato da equipe usuária compõe a avaliação do M4 da equipe avaliada.",
       "entregaveis": [
-        "Seção 5 de docs/M4_piloto.md.",
-        "Anexo com o relato da equipe usuária."
+        "Slides (10 min).",
+        "Decisão da banca registrada no M4."
       ],
       "criterios_aceite": [
-        "Recomendação explícita e sustentada pelas evidências das seções 3 e 4.",
-        "Condicionantes formuladas de modo verificável."
+        "Recomendação (escalar / ajustar / encerrar) sustentada pelas seções 3 e 4 do documento."
       ]
     },
     {
-      "title": "[Gate] G4 - Piloto (19/11)",
-      "milestone": "M4",
-      "labels": ["fase:iv", "tipo:gate"],
-      "description": "Perguntas do gate: o desempenho se sustentou fora do laboratório? As salvaguardas funcionaram no uso real, e não só no papel?",
-      "entregaveis": [
-        "docs/M4_piloto.md entregue em 18/11 até 23h59.",
-        "Slides (10 min) e registro da decisão do gate."
-      ],
-      "criterios_aceite": [
-        "Critérios de aceite de F4.DO3 e F4.DO4 atendidos.",
-        "Qualidade e utilidade do golden set demonstradas."
-      ]
-    },
-    {
-      "title": "[Documento] Pacote de liberação e plano de operação (F5.DO1)",
+      "title": "[Atividade] Preparar pacote de liberação, RUNBOOK completo e kit de transferência (F5.DO1–DO4)",
       "milestone": "M5",
-      "labels": ["fase:v", "tipo:documento", "papel:software"],
-      "description": "Publicar a versão liberada (tag/release) com artefatos executáveis, configurações necessárias, dependências e requisitos de ambiente, procedimento de rollback e monitoramento previsto. Completar o RUNBOOK.md.",
+      "labels": ["fase:v", "tipo:atividade", "papel:software", "papel:ml"],
+      "description": "Publicar a release/tag com artefatos executáveis, configurações, dependências, rollback e monitoramento; completar o RUNBOOK.md. Registrar a implantação e a verificação pós-implantação e o período de operação assistida (métricas, alertas, ações corretivas, estabilidade). Montar o kit de transferência: documentação, orientação de capacitação, responsabilidades após a transferência, dívidas técnicas conhecidas e termo de aceite em branco. Conteúdo dado na aula 26 (17/11), uma semana antes da entrega. O kit é o que a equipe receptora usará sozinha no handover.",
       "entregaveis": [
-        "Release/tag no repositório.",
-        "Seção 1 de docs/M5_entrega.md e RUNBOOK.md completo."
+        "Release/tag no repositório e RUNBOOK.md completo.",
+        "Registro de implantação/verificação e de operação assistida.",
+        "Kit de transferência com termo de aceite operacional pronto para preenchimento."
+      ],
+      "criterios_aceite": [
+        "Pacote executável por terceiros a partir apenas da documentação.",
+        "Runbook cobre operação, incidentes, rollback e monitoramento.",
+        "Dívidas técnicas conhecidas declaradas, não omitidas."
+      ]
+    },
+    {
+      "title": "[Entregável] M5 — Documento de Entrega e Habilitação (docs/M5_entrega.md) · 25/11",
+      "milestone": "M5",
+      "labels": ["fase:v", "tipo:entregavel"],
+      "description": "Único documento da Fase V. Seções: 1 Pacote de liberação e plano de operação (F5.DO1) · 2 Registro de implantação e verificação (F5.DO2) · 3 Operação assistida e monitoramento (F5.DO3) · 4 Kit de transferência com termo de aceite operacional (F5.DO4) · 5 Retomada do catálogo de desafios — quais das oito dimensões encontramos de verdade, quais não e por quê, qual subestimamos, com evidência do projeto. A seção 4 é completada pela equipe receptora no handover de 26/11; a seção 5 é a base da apresentação final. Entregar até 25/11, 23h59.",
+      "entregaveis": [
+        "docs/M5_entrega.md com as seções 1 a 5 preenchidas (termo de aceite em branco até o handover).",
+        "docs/uso_de_ia.md fechado com o balanço do semestre (insumo da aula 28, AI4SE).",
+        "Checklist de critérios mínimos de aceite autoavaliado."
       ],
       "criterios_aceite": [
         "Pacote de liberação completo e executável por terceiros.",
-        "Runbook cobre operação, incidentes, rollback e monitoramento."
+        "Runbook cobrindo operação, incidentes, rollback e monitoramento.",
+        "Kit de transferência com documentação, responsabilidades e termo de aceite.",
+        "Cada uma das oito dimensões de desafio respondida como encontrada / não encontrada / subestimada, com evidência."
       ]
     },
     {
-      "title": "[Atividade] Registro de implantação, verificação e operação assistida (F5.DO2/F5.DO3)",
+      "title": "[Banca] Handover cruzado em aula · 26/11 (aula 29)",
       "milestone": "M5",
-      "labels": ["fase:v", "tipo:atividade", "papel:software", "papel:ml"],
-      "description": "Registrar os passos de implantação (executor, data, resultado), a verificação pós-implantação e o período de operação assistida com métricas, alertas, observações e ações corretivas, concluindo sobre a estabilidade inicial.",
+      "labels": ["fase:v", "tipo:banca"],
+      "description": "Durante as 2h da aula, a equipe receptora tenta subir e operar o sistema usando apenas a documentação, sem ajuda dos autores, e ao final assina ou recusa o aceite operacional, justificando. A nota de transferência sai dessa avaliação, com moderação do professor. O grupo também atua como equipe receptora do sistema da equipe pareada.",
       "entregaveis": [
-        "Seções 2 e 3 de docs/M5_entrega.md."
-      ],
-      "criterios_aceite": [
-        "Verificação pós-implantação descreve o que foi efetivamente testado.",
-        "Avaliação de estabilidade sustentada por métricas ou registros."
-      ]
-    },
-    {
-      "title": "[Documento] Kit de transferência e termo de aceite operacional (F5.DO4)",
-      "milestone": "M5",
-      "labels": ["fase:v", "tipo:documento", "rastreabilidade"],
-      "description": "Preparar a documentação entregue, a orientação de capacitação da equipe receptora, as responsabilidades após a transferência e os pontos de atenção e dívidas técnicas conhecidas, com o termo de aceite pronto para preenchimento.",
-      "entregaveis": [
-        "Seção 4 de docs/M5_entrega.md com o termo de aceite em branco.",
-        "Documentação de capacitação suficiente para subir o sistema sem os autores."
-      ],
-      "criterios_aceite": [
-        "Kit contém documentação, responsabilidades e termo de aceite.",
-        "Dívidas técnicas conhecidas declaradas em vez de omitidas."
-      ]
-    },
-    {
-      "title": "[Atividade] Transferência cruzada em aula (24/11)",
-      "milestone": "M5",
-      "labels": ["fase:v", "tipo:atividade"],
-      "description": "Durante as 2h da aula, a equipe receptora tenta subir e operar o sistema usando apenas a documentação, sem ajuda dos autores, e ao final assina ou recusa o aceite, justificando. Esta issue cobre também o papel do grupo como equipe receptora do sistema de outro grupo.",
-      "entregaveis": [
-        "Termo de aceite preenchido pela equipe receptora (aceito / com ressalvas / recusado).",
+        "Termo de aceite operacional preenchido pela equipe receptora (aceito / com ressalvas / recusado) na seção 4 do M5.",
         "Lista do que faltou na documentação, registrada no repositório."
       ],
       "criterios_aceite": [
         "Tentativa realizada sem contato com os autores durante a aula.",
-        "Resultado e justificativa registrados em docs/M5_entrega.md."
+        "Sucesso da transferência avaliado pela equipe receptora."
       ]
     },
     {
-      "title": "[Documento] Retomada do catálogo de desafios e apresentação final (26/11)",
+      "title": "[Banca] Apresentação final e retomada do catálogo de desafios · 01/12 (aula 30)",
       "milestone": "M5",
-      "labels": ["fase:v", "tipo:documento", "ai4se"],
-      "description": "Apresentação final de 15 min + demo: problema → decisão de viabilidade → o que foi construído → o que o piloto revelou → o que fariam diferente. Fechar respondendo, sobre as oito dimensões de desafio: quais encontramos de verdade, quais não encontramos e por quê, e qual subestimamos. Consolidar docs/uso_de_ia.md como evidência do eixo AI4SE e da dívida cognitiva.",
+      "labels": ["fase:v", "tipo:banca", "ai4se"],
+      "description": "15 min + demo: problema → decisão de viabilidade → o que foi construído → o que o piloto revelou → o que fariam diferente. Fechamento do arco iniciado na Atividade 1: quais desafios do catálogo encontramos de verdade, quais não encontramos e por quê, e qual subestimamos? Reserva para reapresentações em 03/12. Avaliação de pares entregue ao final do semestre.",
       "entregaveis": [
         "Slides da apresentação final e demo funcional.",
-        "Seção de retomada dos desafios (D1 a D8, trilha e AI4SE) no repositório.",
-        "docs/uso_de_ia.md fechado com o balanço do semestre."
+        "Avaliação de pares do grupo."
       ],
       "criterios_aceite": [
-        "Cada uma das oito dimensões respondida como encontrada / não encontrada / subestimada, com evidência do projeto.",
         "Clareza e honestidade da apresentação final.",
-        "Avaliação de pares do grupo entregue."
+        "Retomada dos desafios sustentada por evidência do próprio projeto (seção 5 do M5)."
       ]
     }
   ]
